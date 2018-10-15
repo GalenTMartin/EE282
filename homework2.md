@@ -85,4 +85,40 @@ justgrades <- gradedf[,3]
 mean(justgrades)
 ```
 
-### Question 3 (option 1)
+### Question 3 (option 2)
+In your home directory, create a new directory named "chmodtestdir" and add a file to this directory named "chmodtest." The file should be a script, executable by everyone but only writeable by the creator, which prints "Permissions are fun!" to the screen.
+
+#### Question 3 Answers
+The following commands are needed to create the directory and file
+```
+mkdir chmodtestdir
+cd chmodtestdir
+touch chmodtest
+```
+
+Now, to ensure that the file is readable and executable, we must make sure that the parent directory is executable:
+```
+#First I'll go back to the home directory:
+cd
+#now I'll check permissions
+ls -l 
+#By default the directory should be executable for everyone, but if not use
+chmod ugo+x chmodtestdir
+```
+Now we can make the file we've touched "chmodtest" the requested script.
+```
+cd chmodtestdir
+vi chmodtest
+```
+Inside the editor, we add the line:
+```
+echo "Permissions are fun!"
+```
+Then hit the esc button and :wq to save and exit.
+
+Finally, we must make the script readable and executable and check our permissions using ls -l:
+```
+chmod 755 chmodtest
+ls -l
+```
+ls -l should give permissions for chmodtest as rwxr-xr-x, meaning those in group and other can only read and execute, not write.
