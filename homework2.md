@@ -32,6 +32,9 @@ cd ..
 
 *_To be frank, I'm actually not certain what constitutes a script. This is a collection of commands, and as far as I know that's what a script is_
 
+### Question 1 Comments:
+Very well done. I just a few suggestions. instead of cd dirgalentm you can just do cd dir$USER or cd dir${USER} the last example being an explicit call to the variable user, and the method I recommend just because your variable will work everytime, even if it is quotes. for the mkdir command, I recommend using -p option incase the directory already exists, it won't throw an error. for rmdir, rmdir will only work if the directory is empty, otherwise you will need to run rm -rf dir2.
+
 ### Question 2 (option 1)
 Mr. Gould, a third grade teacher, wants to find the class average for a certain assignment using R. Not quite knowing how to begin, he creates an Excel spreadsheet of his class data (saved as "gradebook.csv") and separately enters the data into R manually to create a matrix.
 
@@ -122,3 +125,6 @@ chmod 755 chmodtest
 ls -l
 ```
 ls -l should give permissions for chmodtest as rwxr-xr-x, meaning those in group and other can only read and execute, not write.
+
+### Question 3 Comments:
+Also very well done. One suggestion though, you can do chmod +x chmodtestdir also, as it implies that +x is added to all. Also when you cd on line 105, I suggest you do cd ../ because cd does nothing if there is no arguement proceeding it. you could also not cd back up and just do chmod +x ../chmodtestdir and avoid having to jump back and forth between directories.
