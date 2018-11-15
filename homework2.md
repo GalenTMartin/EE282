@@ -88,6 +88,9 @@ justgrades <- gradedf[,3]
 mean(justgrades)
 ```
 
+### Question 2 Comments:
+Good job. You went off script a little bit here, but in an informative way by making the matrix "unusable". FYI, he could use ```as.numeric()``` to get around his problem with the text column "contaminating" his data. But that's a kludgey hack.
+
 ### Question 3 (option 2)
 In your home directory, create a new directory named "chmodtestdir" and add a file to this directory named "chmodtest." The file should be a script, executable by everyone but only writeable by the creator, which prints "Permissions are fun!" to the screen.
 
